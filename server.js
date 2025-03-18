@@ -8,9 +8,9 @@ import errorMiddleware from './middleware/errorMiddleware.js'
 dotenv.config()
 const app = express()
 app.use(cors({
-    origin: '*',  // अगर specific origin allow करना हो तो 'http://localhost:5173' लिखो
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
+    origin: "https://bhanu-sharma-frontend.vercel.app", // ✅ Frontend का सही URL डालो
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 app.use(express.json())
 app.use('/', contactRouter)
